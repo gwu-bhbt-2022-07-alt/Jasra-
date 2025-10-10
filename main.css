@@ -1,7 +1,7 @@
 body {
-    background-color: aqua;
+    background-color: rgb(246, 216, 176);
 }
-.class {
+.jsr {
     font-weight: bold;
 }
 img {
@@ -9,4 +9,17 @@ img {
     height: auto;
     display: block;
     margin: 1rem 0;
+}
+.container {
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: dodgerblue;
+
+}
+.wrapper {
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 }
