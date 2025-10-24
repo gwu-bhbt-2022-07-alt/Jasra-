@@ -9,6 +9,14 @@ console.log(aboutSection);
 
 const themeToggleButton = document.querySelector('#theme-toggle');
 const bodyElement = document.querySelector('body');
-themeToggleButton.addEventListener('click',function(){
+
+/*themeToggleButton.addEventListener('click',function(){
     bodyElement.classList.toggle('dark-mode');
-});
+}); */
+
+function handleThemeToggle(){
+    bodyElement.classList.toggle('dark-mode');
+}
+themeToggleButton.addEventListener('click',handleThemeToggle);
+
+   
