@@ -19,4 +19,10 @@ function handleThemeToggle(){
 }
 themeToggleButton.addEventListener('click',handleThemeToggle);
 
+const contactForm = document.querySelector('#contact-form');
+contactForm.addEventListener('submit',function(event){
+    event.preventDefault();
+    console.log("Form submitted,but page did not reload!")
+});
+
    
