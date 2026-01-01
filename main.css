@@ -1,7 +1,7 @@
 :root {
-            --primary: #4a6fa5;
+            --primary: #073272;
             --primary-dark: #385d8a;
-            --secondary: #ff7e5f;
+            --secondary: #c62c06;
             --light: #f8f9fa;
             --dark: #333;
             --gray: #6c757d;
@@ -688,3 +688,137 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        body {
+  cursor: none;
+}
+
+.cursor-triangle {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid #ff6f61;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+/* ===== Background Floating Animation ===== */
+.bg-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  background: linear-gradient(
+    120deg,
+    rgba(74,111,165,0.08),
+    rgba(255,126,95,0.08)
+  );
+}
+
+.bg-animation span {
+  position: absolute;
+  bottom: -150px;
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: rgba(74, 111, 165, 0.15);
+  border-radius: 50%;
+  animation: floatUp 20s linear infinite;
+  filter: blur(1px);
+}
+
+/* Different sizes & speeds */
+.bg-animation span:nth-child(1) { left: 10%; width: 25px; height: 25px; animation-duration: 15s; }
+.bg-animation span:nth-child(2) { left: 20%; width: 60px; height: 60px; animation-duration: 22s; }
+.bg-animation span:nth-child(3) { left: 35%; width: 30px; height: 30px; animation-duration: 18s; }
+.bg-animation span:nth-child(4) { left: 50%; width: 80px; height: 80px; animation-duration: 25s; }
+.bg-animation span:nth-child(5) { left: 65%; width: 35px; height: 35px; animation-duration: 17s; }
+.bg-animation span:nth-child(6) { left: 75%; width: 55px; height: 55px; animation-duration: 24s; }
+.bg-animation span:nth-child(7) { left: 85%; width: 20px; height: 20px; animation-duration: 14s; }
+.bg-animation span:nth-child(8) { left: 95%; width: 45px; height: 45px; animation-duration: 21s; }
+.bg-animation span:nth-child(9) { left: 5%;  width: 70px; height: 70px; animation-duration: 26s; }
+.bg-animation span:nth-child(10){ left: 40%; width: 28px; height: 28px; animation-duration: 16s; }
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-120vh) translateX(50px);
+    opacity: 0;
+  }
+}
+/* ===== About Image Hover Lift Animation ===== */
+.about-image {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-image img {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-image:hover img {
+  transform: translateY(-15px);
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Glass Bubble Background Animation ===== */
+.bubble-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.bubble-bg span {
+  position: absolute;
+  bottom: -120px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(30, 15, 89, 0.25);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow:
+    inset 0 0 12px rgba(168, 4, 4, 0.8),
+    0 10px 25px rgba(0, 0, 0, 0.05);
+  animation: bubbleFloat 18s linear infinite;
+}
+
+/* Different bubble sizes & speeds */
+.bubble-bg span:nth-child(1)  { left: 5%;  width: 25px; height: 25px; animation-duration: 12s; }
+.bubble-bg span:nth-child(2)  { left: 12%; width: 55px; height: 55px; animation-duration: 22s; }
+.bubble-bg span:nth-child(3)  { left: 20%; width: 35px; height: 35px; animation-duration: 16s; }
+.bubble-bg span:nth-child(4)  { left: 30%; width: 75px; height: 75px; animation-duration: 26s; }
+.bubble-bg span:nth-child(5)  { left: 40%; width: 28px; height: 28px; animation-duration: 14s; }
+.bubble-bg span:nth-child(6)  { left: 50%; width: 60px; height: 60px; animation-duration: 23s; }
+.bubble-bg span:nth-child(7)  { left: 60%; width: 20px; height: 20px; animation-duration: 11s; }
+.bubble-bg span:nth-child(8)  { left: 70%; width: 45px; height: 45px; animation-duration: 19s; }
+.bubble-bg span:nth-child(9)  { left: 80%; width: 30px; height: 30px; animation-duration: 15s; }
+.bubble-bg span:nth-child(10) { left: 90%; width: 65px; height: 65px; animation-duration: 24s; }
+.bubble-bg span:nth-child(11) { left: 15%; width: 18px; height: 18px; animation-duration: 10s; }
+.bubble-bg span:nth-child(12) { left: 55%; width: 50px; height: 50px; animation-duration: 21s; }
+
+@keyframes bubbleFloat {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-120vh);
+    opacity: 0;
+  }
+}

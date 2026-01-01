@@ -35,3 +35,11 @@
                 header.style.boxShadow = 'var(--shadow)';
             }
         });
+
+    
+const cursor = document.querySelector(".cursor-triangle");
+
+window.addEventListener("mousemove", (e) => {
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
+});
